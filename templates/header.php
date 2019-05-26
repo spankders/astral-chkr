@@ -31,7 +31,9 @@ if(!isset($_SESSION['logged_in'])){
         <link rel="stylesheet" href="../styles/pe-icons/helper.css"/>
         <link rel="stylesheet" href="../styles/stroke-icons/style.css"/>
         <link rel="stylesheet" href="../styles/style.css">
-    
+        <style>
+            .mKey-f{border:0px solid;background-color:transparent;color:white}
+        </style>
     </head>
  <body>
     <div class="wrapper">
@@ -44,7 +46,7 @@ if(!isset($_SESSION['logged_in'])){
                         </a>
                     </div>
                 </div>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="sobre.php">
                     ASTRAL
                     <span>v.1</span>
                 </a>
@@ -61,7 +63,7 @@ if(!isset($_SESSION['logged_in'])){
                 <ul class="nav navbar-nav">
                     <li class="nav-item uppercase-link">
                         <a href="#" class="nav-link">Rango
-                            <span class="label label-warning"><?php echo $_SESSION['level']; ?></span>
+                            <span class="label label-warning"><?php require_once 'funcionLevel.php'; ?>
                         </a>
                     </li>
                     <li class="nav-item uppercase-link">
@@ -69,13 +71,25 @@ if(!isset($_SESSION['logged_in'])){
                             <span class="label label-warning"><?php echo $_SESSION['creditos']; ?></span>
                         </a>
                     </li>
-                    <li class="nav-item profil-link">
-                        <a href="logout.php">
+                    <li class="nav-item profil-link dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="profile-address">
                                 <?php if($_SESSION['logged_in']) { ?>
 				<?php echo $_SESSION['name']; ?></span>
                             <img src="images/profile.jpg" class="rounded-circle" alt="">
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Perfil <i class="fas fa-user"></i></a>
+                            <a class="dropdown-item" href="#">Configuración <i class="fas fa-cog"></i></a>
+                            <a class="dropdown-item text-info" href="#"><?php require 'ip.php'; ?> <i class="fas fa-eye"></i></a>
+                            <a class="dropdown-item" href="#"><?php echo date("d/m/y"); ?> <i class="far fa-calendar"></i></a>
+                            <a class="dropdown-item" href="#"><?php echo $_SESSION['creditos']; ?> <i class="fas fa-coins"></i><i class="fas fa-cart-plus"></i></a>
+                            <?php if($_SESSION['level'] == "5"){ ?>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Admin Panel <i class="fas fa-user-shield"></i></a>
+                            <a class="dropdown-item" href="logout.php">Salir <i class="fas fa-sign-out-alt"></i></a>
+                            <?php } ?>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -92,102 +106,36 @@ if(!isset($_SESSION['logged_in'])){
               
                 <li class="active"<?php if($uri == 'home.php'); ?>><a href="home.php">Inicio</a>
                 </li>
-                
-                <li>
-                    <a href="#monitoring" data-toggle="collapse" aria-expanded="false">
-                        Monitoring<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                    </a>
-                    <ul id="monitoring" class="nav nav-second collapse">
-                        <li><a href="metrics.html"> Metrics</a></li>
-                        <li><a href="usage.html"> Usage</a></li>
-                        <li><a href="activity.html"> Activity</a></li>
-                    </ul>
-                </li>
                 <li class="nav-category">
-                    UI Elements
+                    ASTRAL CHECKER
                 </li>
                 <li>
-                    <a href="#uielements" data-toggle="collapse" aria-expanded="false">
-                        General<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                    <a href="#gates" data-toggle="collapse" aria-expanded="false">
+                        GATES <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
-                    <ul id="uielements" class="nav nav-second collapse">
-                        <li><a href="panels.html">Panels</a></li>
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="tabs.html">Tabs</a></li>
-                        <li><a href="modals.html">Modals</a></li>
-                        <li><a href="alerts.html">Alerts</a></li>
-                        <li><a href="loaders.html">Loaders</a></li>
-                        <li><a href="gridSystem.html">Grid system</a></li>
-                        <li><a href="draggable.html">Draggable</a></li>
+                    <ul id="gates" class="nav nav-second collapse">
+                        <li><a href="#">SoulGate <i class="far fa-check-circle"></i></a></li>
+                        <li><a href="#">BreakICE <i class="far fa-check-circle"></i></a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#tables" data-toggle="collapse" aria-expanded="false">
-                        Tables design<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                    <a href="#herramientas" data-toggle="collapse" aria-expanded="false">
+                        HERRAMIENTAS <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
-                    <ul id="tables" class="nav nav-second collapse">
-                        <li><a href="tableStyles.html">Table styles</a></li>
-                        <li><a href="dataTables.html">Data Tables</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#forms" data-toggle="collapse" aria-expanded="false">
-                        From controls <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                    </a>
-                    <ul id="forms" class="nav nav-second collapse">
-                        <li><a href="formElements.html"> Basic elements </a></li>
-                        <li><a href="autocomplete.html"> Autocomplete </a></li>
-                        <li><a href="controls.html"> Selection controls </a></li>
-                        <li><a href="textEditor.html"> Text editor </a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#charts" data-toggle="collapse" aria-expanded="false">
-                        Charts and graphs<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                    </a>
-                    <ul id="charts" class="nav nav-second collapse">
-                        <li><a href="flotCharts.html">Flot charts</a></li>
-                        <li><a href="chartJs.html">ChartJS</a></li>
-                        <li><a href="sparkline.html">Sparkline</a></li>
-                        <li><a href="datamaps.html">Datamaps</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-category">
-                    App Pages
-                </li>
-                <li>
-                    <a href="#extras" data-toggle="collapse" aria-expanded="false">
-                        Basic <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                    </a>
-                    <ul id="extras" class="nav nav-second collapse">
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="support.html">Support</a></li>
-                        <li><a href="nestableList.html">List</a></li>
-                        <li><a href="timeline.html">Timeline</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#common" data-toggle="collapse" aria-expanded="false">
-                        Common <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                    </a>
-                    <ul id="common" class="nav nav-second collapse">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="forgotPassword.html">Forgot password</a></li>
-                        <li><a href="error.html">Error page</a></li>
+                    <ul id="herramientas" class="nav nav-second collapse">
+                        <li><a href="#">Extrapolar <i class="fas fa-cog"></i></a></li>
+                        <li><a href="#">Proxy Checker <i class="fas fa-cog"></i></a></li>
+                        <li><a href="#">Buscar BIN <i class="fas fa-cog"></i></a></li>
                     </ul>
                 </li>
                 <li class="nav-info">
                     
                     <?php } ?>
                     <div class="m-t-xs">
-                        <span class="c-white">ASTRALCHECKER</span>
-                        <i class="pe pe-7s-shield text-accent"></i>
+                        <span class="c-white">ASTRALCHECKER</span><br />
+                        Tu IP: <?php echo $MyipAddress;?><br />
+                        <hr>
+                       <i class="fas fa-user-secret text-accent"></i> <i class="fab fa-telegram"></i>
                     </div>
                 </li>
             </ul>

@@ -33,7 +33,7 @@
 
                         <div class="panel-body text-center">
                             <h2 class="m-b-none">
-                               <?php echo $_SESSION['users']; ?><span class="ld-loading"><i class="fa fa-user"> </i></span>
+                              2<span class="ld-loading"><i class="fa fa-user"> </i></span>
                             </h2>
 
                             <div class="small text-warning">USUARIOS</div>
@@ -57,97 +57,135 @@
                 </div>
                 <div class="col-lg-2 col-xs-6">
                     <div class="panel panel-filled">
-                        <div class="panel-body">
-                            <h2 class="m-b-none">
-                                262 <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +56%</span>
-                            </h2>
 
-                            <div class="small">Total users</div>
-                            <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">05:42pm</span></div>
+                        <div class="panel-body text-center">
+                            <h2 class="m-b-none">
+                                2<span class="ld-loading"><i class="fas fa-rocket"></i></span>
+                            </h2>
+                            <div class="small text-warning">GATES</div>
+                            <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Update: <span class="c-white"><?php echo date("H:i"); ?></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-xs-6">
                     <div class="panel panel-filled">
-                        <div class="panel-body">
+
+                        <div class="panel-body text-center">
                             <h2 class="m-b-none">
-                                62% <span class="slight"><i class="fa fa-play fa-rotate-270 text-warning"> </i> +18%</span>
+                                2<span class="ld-loading"><i class="fas fa-users"></i></span>
                             </h2>
-
-                            <div class="small">Bounce Rate</div>
-                            <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Updated: <span class="c-white">04:00am</span></div>
+                            <div class="small text-warning">STAFF</div>
+                            <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> Update: <span class="c-white"><?php echo date("H:i"); ?></span></div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-xs-8">
+                    <div class="panel panel-filled">
 
-
-                <div class="col-lg-4 col-xs-12">
-                    <div class="panel panel-filled" style="position:relative;height: 114px">
-                        <div style="position: absolute;bottom: 0;left: 0;right: 0">
-                            <span class="sparkline"></span>
-                        </div>
-                        <div class="panel-body">
-                            <div class="m-t-sm">
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-xs">+Creditos</a>
-                                </div>
-                                <div class="c-white"><span class="label label-accent">Creditos</span> 
-                                    
-                            </div>
+                        <div class="panel panel-filled text-center">
+                            <h2 class="m-b-none">
+                                <span class="ld-loading"><i class="fas fa-donate"></i></span>
+                            </h2>
+                            <div class="large text-warning"><a href="#">COMPRAR CREDITOS</a></div>
+                            <div class="slight m-t-sm"><i class="fa fa-clock-o"> </i> <span class="c-white">Ahora puedes comprar tus <u>CREDITOS</u> de manera fácil y rápida!</span></div>
                         </div>
                     </div>
                 </div>
-
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel">
-                        <div class="row">
-                            <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="panel panel-filled">
 
-                                <div class="panel-body h-200 list">
-                                    <div class="stats-title">
-                                        <h4><i class="fa fa-bar-chart text-warning" aria-hidden="true"></i> Traffic source</h4>
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                            
+                                            <h2 class="m-t-xs m-b-none">
+                                                Bienvenido <span class="c-accent"><u><?php echo $_SESSION['name']; ?></span></u>
+                                            </h2>
+                                            <small>
+                                                <?php echo $_SESSION['descripcion']; ?>
+                                            </small>
+                                       Tu descripción estaria aquí
                                     </div>
-                                    <div class="small">
-                                        Total users from the beginning of activity. See detailed charts for more information locations and traffic source.
+                                    <div class="col-md-3">
+                                        <table class="table small m-t-sm">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <strong class="c-white"><?php echo $_SESSION['creditos']; ?></strong> Creditos
+                                                </td>
+                                                <td>
+                                                    <strong class="c-white">0/0</strong> LIVES
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong class="c-white"><?php echo $_SESSION['level']; ?></strong> LEVEL
+                                                </td>
+                                                
+
+                                                <td>
+                                                    <strong class="c-white">0/0</strong> API
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <script type="text/javascript">
+                                                function mostrarKey(){
+                                                                var cambio = document.getElementById("mKey");
+                                                                if(cambio.type == "password"){
+                                                                        cambio.type = "text";
+                                                                        $('.icon').removeClass('far fa-eye-slash').addClass('far fa-eye');
+                                                                }else{
+                                                                        cambio.type = "password";
+                                                                        $('.icon').removeClass('far fa-eye').addClass('far fa-eye-slash');
+                                                                }
+                                                        } 
+
+                                                        $(document).ready(function () {
+                                                        $('#MostrarKey').click(function () {
+                                                                $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+                                                        });
+                                                });
+                                                </script>
+                                                 <td colspan="3" style="text-align:right;">
+                                                    <input id="mKey" type="Password" class="mKey-f" value="<?php echo $_SESSION['key_asc']; ?>"></input>
+                                                    <button id="mostrar_key" class="btn btn-link" type="button" onclick="mostrarKey()">
+                                                       <span class="far fa-eye-slash icon"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-3 m-t-sm">
+                                    <span class="c-white">
+                                        <?php echo $_SESSION['email']; ?>
+                                    </span>
+                                        <br>
+                                        <small>
+                                            Nunca le des información de tu cuenta a <b>NADIE!</b>, ningún <u>administrador</u> o parte del staff te pedira datos de tu cuenta.
+                                        </small>
+                                        <div class="btn-group m-t-sm">
+                                            <a href="#" class="btn btn-default btn-sm"><i class="fas fa-bug"></i> BUGS</a>
+                                            <a href="#" class="btn btn-default btn-sm"><i class="fas fa-headset"></i> SUPPORT</a>
+                                        </div>
+
+
                                     </div>
 
-                                    <div class="sparkline3"></div>
 
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <small class="stat-label">Today</small>
-                                            <h4 class="m-t-xs">170,20 <i class="fa fa-level-up text-warning"></i></h4>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <small class="stat-label">Last month %</small>
-                                            <h4 class="m-t-xs">%20,20 <i class="fa fa-level-down c-white"></i></h4>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <small class="stat-label">Year</small>
-                                            <h4 class="m-t-xs">2180,50 <i class="fa fa-level-up text-warning"></i></h4>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="panel-body">
-                                    <div class="text-center slight">
-                                    </div>
-
-                                    <div class="flot-chart" style="height: 160px;margin-top: 5px">
-                                        <div class="flot-chart-content" id="flot-line-chart"></div>
-                                    </div>
-
-                                    <div class="small text-center">All active users from last month.</div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- End main content-->

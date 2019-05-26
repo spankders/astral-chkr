@@ -19,11 +19,7 @@ class Cl_User
 	 * Registro de usuarios
 	 * @param array $data
 	  */
-        
-        public function level( array $data){
-             
-        }
-        
+
 	public function registration( array $data )
 	{
 		if( !empty( $data ) ){
@@ -83,7 +79,10 @@ class Cl_User
 			$key_asc = mysqli_real_escape_string( $this->_con,  $trimmed_data['key_asc'] );
                         $creditos = mysqli_real_escape_string( $this->_con,  $trimmed_data['creditos'] );
                         $level = mysqli_real_escape_string( $this->_con,  $trimmed_data['level'] );
-
+                           
+                        if (!$_SESSION['level'] == 'Administrador')    {
+                            
+                        }
 			if((!$email) ||  (!$password) ||  (!$key_asc) ) {
 				throw new Exception( LOGIN_FIELDS_MISSING );
 			}
@@ -124,7 +123,7 @@ class Cl_User
 			$user_id = mysqli_real_escape_string( $this->_con, $trimmed_data['user_id'] );
                         $creditos = mysqli_real_escape_string( $this->_con, $trimmed_data['creditos'] );
                         $level = mysqli_real_escape_string( $this->_con, $trimmed_data['level'] );
-                         
+
 			if((!$password) || (!$cpassword) ) {
 				throw new Exception( FIELDS_MISSING );
 			}
