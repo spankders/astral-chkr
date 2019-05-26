@@ -63,7 +63,7 @@ if(!isset($_SESSION['logged_in'])){
                 <ul class="nav navbar-nav">
                     <li class="nav-item uppercase-link">
                         <a href="#" class="nav-link">Rango
-                            <span class="label label-warning"><?php require_once 'funcionLevel.php'; ?>
+                            <span class="label label-warning"><?php require_once 'funcionLevel.php'; ?></span>
                         </a>
                     </li>
                     <li class="nav-item uppercase-link">

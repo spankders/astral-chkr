@@ -79,10 +79,7 @@ class Cl_User
 			$key_asc = mysqli_real_escape_string( $this->_con,  $trimmed_data['key_asc'] );
                         $creditos = mysqli_real_escape_string( $this->_con,  $trimmed_data['creditos'] );
                         $level = mysqli_real_escape_string( $this->_con,  $trimmed_data['level'] );
-                           
-                        if (!$_SESSION['level'] == 'Administrador')    {
-                            
-                        }
+
 			if((!$email) ||  (!$password) ||  (!$key_asc) ) {
 				throw new Exception( LOGIN_FIELDS_MISSING );
 			}
