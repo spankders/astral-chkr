@@ -1,0 +1,25 @@
+body{
+background-color: #212121;
+}
+.form{
+	padding-left: 10%;
+	padding-top: 2%;
+	padding-right: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+}
+
+textarea{
+	border-radius:10px; 
+}
+button[for="bt_menu"]{
+		width:20%;
+	}
+@media(max-width: 800px){
+	.form{padding-left: 2%;
+	padding-right: 2%;}
+
+	button[for="bt_menu"]{
+		width:32%;
+	}
+}
