@@ -4,7 +4,8 @@ session_start();
 date_default_timezone_set("America/Argentina");
 require_once 'templates/include.php';
 require_once 'funcion.php'; 
-require_once 'config.php'; 
+require_once 'config.php';
+require_once 'ip.php';
 if(!isset($_SESSION['logged_in'])){
 	header('Location: index.php');
 }
@@ -62,7 +63,7 @@ if(!isset($_SESSION['logged_in'])){
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="nav-item uppercase-link">
-                        <a href="#" class="nav-link">Rango
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#rangoModal">Rango
                             <span class="label label-warning"><?php require_once 'funcionLevel.php'; ?></span>
                         </a>
                     </li>
@@ -81,10 +82,9 @@ if(!isset($_SESSION['logged_in'])){
                         <ul class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">Perfil <i class="fas fa-user"></i></a>
                             <a class="dropdown-item" href="#">Configuración <i class="fas fa-cog"></i></a>
-                            <a class="dropdown-item text-info" href="#"><?php require 'ip.php'; ?> <i class="fas fa-eye"></i></a>
+                            <a class="dropdown-item text-info" href="#"><?php echo $MyipAddress;?> <i class="fas fa-eye"></i></a>
                             <a class="dropdown-item" href="#"><?php echo date("d/m/y"); ?> <i class="far fa-calendar"></i></a>
-                            <a class="dropdown-item" href="#"><?php echo $_SESSION['creditos']; ?> <i class="fas fa-coins"></i><i class="fas fa-cart-plus"></i></a>
-                            <?php if($_SESSION['level'] == "5"){ ?>
+                            <a class="dropdown-item" href="#"><?php require_once 'funcionLevel.php';  ?></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Admin Panel <i class="fas fa-user-shield"></i></a>
                             <a class="dropdown-item" href="logout.php">Salir <i class="fas fa-sign-out-alt"></i></a>
@@ -130,7 +130,7 @@ if(!isset($_SESSION['logged_in'])){
                 </li>
                 <li class="nav-info">
                     
-                    <?php } ?>
+                    
                     <div class="m-t-xs">
                         <span class="c-white">ASTRALCHECKER</span><br />
                         Tu IP: <?php echo $MyipAddress;?><br />

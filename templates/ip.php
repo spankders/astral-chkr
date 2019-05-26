@@ -31,5 +31,5 @@ return $ip;
 
 
 $MyipAddress = getrealip();
-echo $MyipAddress; // IP:  58.97.178.57
+// echo $MyipAddress; // IP:  58.97.178.57
 ?>

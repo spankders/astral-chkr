@@ -1,3 +1,41 @@
+                                <div class="modal fade" id="rangoModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title">RANGOS</h4>
+                                                <small>Descripción de RANGOS.</small>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="m-t-none">Los rangos cumplen la función de obtener acceso a secciones <b>PRIVADAS</b> como támbien obtener packs de creditos y cambios en su perfil que otros rangos no pueden tener.<br />
+                                                    <br />
+                                                    <span class="text-info">Los rangos se dividen en 4:</span></h6>
+                                                <p></p>
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <h4 class="stat-label">ADMINISTRADOR</h4>
+                                                        <small class="m-t-xs">Los administradores tienen acceso completo al sistema.<i class="fa fa-level-up text-accent"></i></small>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h4 class="stat-label">VIP USER</h4>
+                                                        <small class="m-t-xs">Acceso a Panel VIP donde obtendra támbien packs de creditos especiales y recursos privados.<i class="fa fa-level-down c-white"></i></small>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h4 class="stat-label">FREE USER</h4>
+                                                        <small class="m-t-xs">Acceso limitado donde podran acceder a herramientas y gates publicos (estos no tienen soporte) <i class="fa fa-level-up text-accent"></i></small>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h4 class="stat-label"><s>BANNED</s></h4>
+                                                        <small class="m-t-xs">Acceso Restringido, podran ingresar al sistema pero tendran todo BLOQUEADO. <i class="fa fa-level-up text-accent"></i></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
 <!-- Vendor scripts -->
 <script src="../vendor/pacejs/pace.min.js"></script>
 <script src="../vendor/jquery/dist/jquery.min.js"></script>
