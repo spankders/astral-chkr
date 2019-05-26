@@ -4,8 +4,8 @@ session_start();
 date_default_timezone_set("America/Argentina");
 require_once 'templates/include.php';
 require_once 'funcion.php'; 
-require_once 'config.php';
-require_once 'ip.php';
+require_once 'config.php'; 
+require 'ip.php';
 if(!isset($_SESSION['logged_in'])){
 	header('Location: index.php');
 }
@@ -84,11 +84,13 @@ if(!isset($_SESSION['logged_in'])){
                             <a class="dropdown-item" href="#">Configuración <i class="fas fa-cog"></i></a>
                             <a class="dropdown-item text-info" href="#"><?php echo $MyipAddress;?> <i class="fas fa-eye"></i></a>
                             <a class="dropdown-item" href="#"><?php echo date("d/m/y"); ?> <i class="far fa-calendar"></i></a>
-                            <a class="dropdown-item" href="#"><?php require_once 'funcionLevel.php';  ?></a>
+                            <a class="dropdown-item" href="#"><?php echo $_SESSION['creditos']; ?> <i class="fas fa-coins"></i><i class="fas fa-cart-plus"></i></a>
                             <div class="dropdown-divider"></div>
+                            <?php if($_SESSION['level'] == "5"){ ?>
                             <a class="dropdown-item" href="#">Admin Panel <i class="fas fa-user-shield"></i></a>
-                            <a class="dropdown-item" href="logout.php">Salir <i class="fas fa-sign-out-alt"></i></a>
                             <?php } ?>
+                            <a class="dropdown-item" href="logout.php">Salir <i class="fas fa-sign-out-alt"></i></a>
+                            
                         </ul>
                     </li>
                 </ul>
@@ -130,7 +132,7 @@ if(!isset($_SESSION['logged_in'])){
                 </li>
                 <li class="nav-info">
                     
-                    
+                    <?php } ?>
                     <div class="m-t-xs">
                         <span class="c-white">ASTRALCHECKER</span><br />
                         Tu IP: <?php echo $MyipAddress;?><br />
